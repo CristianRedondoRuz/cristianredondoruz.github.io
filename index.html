@@ -1,16 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
   <title>TodoListas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .playstore-button {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #4285F4;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .playstore-button:hover {
+      background-color: #357ae8;
+    }
+  </style>
 </head>
-  
 <body>
-  <div style="text-align:center; margin-bottom:20px;">
-        <img src="https://cristianredondoruz.github.io/todo_listas_icono.png" 
-             alt="Icono de la app" 
-             style="width:100px; height:100px; object-fit:contain;">
-    </div>
-  <h1>TodoListas - Listas y Alarmas</h1>
-  <p>Aplicación oficial disponible en Google Play.</p>
+  <div class="container">
+    <img src="https://cristianredondoruz.github.io/todo_listas_icono.png" alt="Icono de la app">
+    <h1>TodoListas - Listas y Alarmas</h1>
+    <p>Aplicación oficial disponible en Google Play.</p>
+    <!-- Aquí pones el enlace a tu app en Google Play -->
+    <a class="playstore-button" href="https://play.google.com/store/apps/details?id=es.todolistas" target="_blank">
+      Descargar en Google Play
+    </a>
+  </div>
 </body>
 </html>
