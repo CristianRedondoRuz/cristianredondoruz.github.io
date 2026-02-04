@@ -16,10 +16,10 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #6dd5fa, #2980b9);
       color: #333;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
       padding: 20px;
     }
 
@@ -27,7 +27,7 @@
       background-color: #fff;
       border-radius: 20px;
       padding: 40px 30px;
-      max-width: 500px;
+      max-width: 600px;
       width: 100%;
       text-align: center;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -43,7 +43,7 @@
       height: 120px;
       object-fit: contain;
       border-radius: 50%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s, box-shadow 0.3s;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       margin-bottom: 25px;
     }
@@ -56,13 +56,29 @@
     h1 {
       font-size: 28px;
       color: #2c3e50;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
-    p {
+    .intro {
       font-size: 16px;
       color: #555;
       margin-bottom: 30px;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .intro strong {
+      color: #2c3e50;
+    }
+
+    ul {
+      text-align: left;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    li {
+      margin-bottom: 10px;
     }
 
     .playstore-button {
@@ -95,6 +111,10 @@
         padding: 12px 25px;
         font-size: 14px;
       }
+
+      .intro {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
@@ -102,8 +122,19 @@
   <div class="container">
     <img class="icon" src="https://cristianredondoruz.github.io/todo_listas_icono.png" alt="Icono de la app">
     <h1>TodoListas - Listas y Alarmas</h1>
-    <p>Organiza tus tareas y recibe alertas. Descarga nuestra app oficial en Google Play.</p>
-    <!-- Cambia TU_PAQUETE_AQUI por el ID de tu app -->
+
+    <p class="intro">
+      <strong>TodoListas</strong> es la app más fácil para crear listas de tareas, programar recordatorios y activar alarmas exactas.  
+      Organiza tu vida en un solo lugar y convierte tu móvil en tu mejor asistente personal: haz tus tareas, controla tus citas, no olvides compras ni pagos, y recibe avisos puntuales cuando más los necesitas.
+    </p>
+
+    <ul>
+      <li>✅ Crea listas personalizadas para cualquier propósito: trabajo, estudios, viajes, compras o citas médicas.</li>
+      <li>✅ Añade tareas y recordatorios con fechas, notas, precios u observaciones.</li>
+      <li>✅ Configura alarmas exactas para no olvidar nada importante: un pago, recoger a tus hijos, preparar una reunión… ¡incluso para despertarte!</li>
+      <li>✅ Disfruta de una interfaz rápida y sencilla que hace que organizar tu día sea práctico y sin complicaciones.</li>
+    </ul>
+
     <a class="playstore-button" href="https://play.google.com/store/apps/details?id=es.todolistas" target="_blank">
       Descargar en Google Play
     </a>
