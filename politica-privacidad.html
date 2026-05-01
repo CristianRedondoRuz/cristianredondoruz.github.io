@@ -2,48 +2,53 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <title>Política de Privacidad</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - TodoListas</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #2980b9; margin-top: 30px; }
+        .icon { text-align: center; margin-bottom: 20px; }
+        .highlight { font-weight: bold; }
+    </style>
 </head>
-    
-    <body>
-        <div style="text-align:center; margin-bottom:20px;">
+<body>
+    <div class="icon">
         <img src="https://cristianredondoruz.github.io/todo_listas_icono.png" 
-             alt="Icono de la app" 
+             alt="Icono de TodoListas" 
              style="width:100px; height:100px; object-fit:contain;">
     </div>
 
     <h1>Política de Privacidad</h1>
+    <p>Última actualización: Mayo 2026</p>
 
-    <p>
-        Esta aplicación funciona completamente en el dispositivo del usuario y no recopila, almacena ni comparte datos personales relacionados con el contenido de la app. 
-        Todos los datos generados por el uso de la app se almacenan localmente en el dispositivo y no se transmiten a terceros.
-    </p>
+    <p>TodoListas ("nosotros", "la aplicación") se compromete a proteger la privacidad de sus usuarios. Esta política describe cómo se gestionan los datos dentro de la aplicación.</p>
 
-    <p>
-        La aplicación puede mostrar anuncios a través de servicios de publicidad de terceros. 
-        Estos servicios pueden recopilar información básica del dispositivo o sobre el uso de la aplicación con fines de personalización de anuncios. 
-        Los anuncios pueden utilizar identificadores anónimos del dispositivo, pero no permiten identificar personalmente al usuario. 
-        No compartimos información personal con los anunciantes.
-    </p>
+    <h2>1. Almacenamiento Local y Datos del Usuario</h2>
+    <p>La aplicación funciona principalmente de forma local. Los datos de sus listas, tareas y alarmas se almacenan en la memoria interna de su dispositivo. No recopilamos, almacenamos ni compartimos estos datos en servidores externos de nuestra propiedad.</p>
 
-    <p>
-        La aplicación utiliza <strong>Firebase Analytics</strong> para recopilar información anónima sobre cómo se utiliza la aplicación. 
-        Esto nos ayuda a mejorar la experiencia del usuario y optimizar el funcionamiento de la app. 
-        Los datos recopilados son anónimos y no permiten identificar personalmente al usuario.
-    </p>
+    <h2>2. Copia de Seguridad en la Nube (Google Drive)</h2>
+    <p>La aplicación ofrece una función opcional de copia de seguridad mediante la integración con <span class="highlight">Google Drive API</span>. Al utilizar esta función:</p>
+    <ul>
+        <li>La aplicación solicita acceso estrictamente a su propia carpeta de datos de aplicación (<span class="highlight">AppData</span>). No tenemos acceso a sus archivos personales, fotos o documentos privados de su unidad de Drive.</li>
+        <li>Los archivos de copia de seguridad se transmiten directamente entre su dispositivo y los servidores de Google de forma cifrada.</li>
+        <li>El usuario es responsable de la gestión y seguridad de su cuenta de Google. TodoListas no se hace responsable de la pérdida de datos derivada del mal uso de la cuenta por parte del usuario o de fallos en los servicios de terceros.</li>
+    </ul>
 
-    <p>
-        La aplicación ofrece la opción de realizar donaciones voluntarias a través de PayPal. 
-        Estas transacciones se gestionan externamente y la aplicación no comparte información personal con terceros.
-    </p>
+    <h2>3. Servicios de Terceros (Anuncios y Analítica)</h2>
+    <p>Para mantener la aplicación gratuita, utilizamos los siguientes servicios:</p>
+    <ul>
+        <li><strong>Google AdMob:</strong> Puede recopilar identificadores de publicidad (como el IDFA de iOS o el AAID de Android) para mostrar anuncios. Cumplimos con las políticas de consentimiento de la UE (RGPD).</li>
+        <li><strong>Firebase Analytics:</strong> Recopila datos estadísticos anónimos (modelo de dispositivo, tiempo de uso, errores técnicos) para ayudarnos a mejorar la estabilidad de la app. No se recopila información que permita identificarle personalmente.</li>
+    </ul>
 
-    <p>
-        Si te encuentras en la Unión Europea, se te puede solicitar tu consentimiento para mostrar anuncios personalizados. 
-        Puedes cambiar tus preferencias de anuncios en cualquier momento desde la configuración de tu dispositivo.
-    </p>
+    <h2>4. Usuarios de la Unión Europea (RGPD)</h2>
+    <p>Si reside en el Espacio Económico Europeo (EEE), usted tiene derecho a acceder, rectificar o eliminar sus datos. Dado que no almacenamos sus datos en nuestros servidores, puede ejercer estos derechos gestionando sus copias en Google Drive o eliminando los datos locales desde los ajustes de la aplicación.</p>
 
-    <p>
-        Para cualquier consulta o solicitud relacionada con la privacidad de tus datos, puedes contactarnos en: <a href="mailto:todolistas.app@gmail.com">todolistas.app@gmail.com</a>
-    </p>
+    <h2>5. Compras In-App (Versión VIP)</h2>
+    <p>Las transacciones de compra única (VIP) se gestionan exclusivamente a través de <strong>Google Play Billing</strong>. No tenemos acceso a sus datos de pago, tarjetas de crédito o información bancaria.</p>
+
+    <h2>6. Contacto</h2>
+    <p>Para cualquier duda sobre esta política, puede contactarnos en: <a href="mailto:todolistas.app@gmail.com">todolistas.app@gmail.com</a></p>
 </body>
 </html>
