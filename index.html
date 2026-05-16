@@ -24,6 +24,30 @@
       background-color: #fff;
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      position: relative; /* Necesario para posicionar el selector de idioma */
+    }
+
+    /* NUEVO: Estilo para el selector de idiomas */
+    .language-switcher {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 14px;
+    }
+
+    .language-switcher a {
+      color: #01875f;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+      border: 1px solid #01875f;
+      border-radius: 5px;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .language-switcher a:hover {
+      background-color: #01875f;
+      color: white;
     }
 
     .icon-app {
@@ -31,6 +55,7 @@
       height: 120px;
       object-fit: contain;
       margin-bottom: 15px;
+      margin-top: 15px; /* Un poco de margen por el botón de idioma */
     }
 
     h1 {
@@ -99,6 +124,11 @@
 </head>
 <body>
   <div class="container">
+    <!-- NUEVO: Selector de idioma -->
+    <div class="language-switcher">
+      <a href="/en/index.html">🌐 English</a>
+    </div>
+
     <img src="https://cristianredondoruz.github.io/todo_listas_icono.png" alt="Icono de TodoListas" class="icon-app">
     <h1>TodoListas</h1>
     <p class="tagline">La forma más sencilla de organizar tus listas y alarmas.</p>
@@ -127,7 +157,7 @@
     </div>
 
     <footer>
-      <p>&copy; 2025 TodoListas App</p>
+      <p>&copy; 2026 TodoListas App</p>
       <a href="https://todolistasapp.com/politica-privacidad.html">Política de Privacidad</a> | 
       <a href="mailto:todolistas.app@gmail.com">Contacto</a>
     </footer>
