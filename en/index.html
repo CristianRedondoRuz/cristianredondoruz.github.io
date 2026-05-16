@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="yKtllyXUbZY82Ghq0K8P39BO46EZhYcJ_j7Vgpck8dg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://todolistasapp.com/">
+  <link rel="canonical" href="https://todolistasapp.com/en/">
   
   <title>TodoListas - Official App</title>
   <style>
@@ -24,6 +24,30 @@
       background-color: #fff;
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      position: relative; /* Necesario para posicionar el selector de idioma */
+    }
+
+    /* Selector de idiomas con la misma estética que el español */
+    .language-switcher {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 14px;
+    }
+
+    .language-switcher a {
+      color: #01875f;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+      border: 1px solid #01875f;
+      border-radius: 5px;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .language-switcher a:hover {
+      background-color: #01875f;
+      color: white;
     }
 
     .icon-app {
@@ -31,6 +55,7 @@
       height: 120px;
       object-fit: contain;
       margin-bottom: 15px;
+      margin-top: 15px; /* Espacio para que no choque con el botón */
     }
 
     h1 {
@@ -99,6 +124,11 @@
 </head>
 <body>
   <div class="container">
+    <!-- NUEVO: Selector de idioma que apunta al Español de la raíz -->
+    <div class="language-switcher">
+      <a href="/index.html">🌐 Español</a>
+    </div>
+
     <img src="https://cristianredondoruz.github.io/todo_listas_icono.png" alt="TodoListas icon" class="icon-app">
     <h1>TodoListas</h1>
     <p class="tagline">The easiest way to organise your lists and alarms.</p>
@@ -127,8 +157,9 @@
     </div>
 
     <footer>
-      <p>&copy; 2025 TodoListas App</p>
-      <a href="https://todolistasapp.com/en/politica-privacidad.html">Privacy Policy</a> | 
+      <p>&copy; 2026 TodoListas App</p>
+      <!-- Corregido el enlace para que apunte a la privacidad en inglés -->
+      <a href="/en/politica-privacidad.html">Privacy Policy</a> | 
       <a href="mailto:todolistas.app@gmail.com">Contact</a>
     </footer>
   </div>
