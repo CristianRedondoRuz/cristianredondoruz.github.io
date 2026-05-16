@@ -4,20 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="google-site-verification" content="yKtllyXUbZY82Ghq0K8P39BO46EZhYcJ_j7Vgpck8dg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://todolistasapp.com/en/condiciones.html">
+    
     <title>Terms and Conditions - TodoListas</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; }
-        .container { background-color: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .container { background-color: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); position: relative; /* Necesario para colocar el botón */ }
         h1 { color: #202124; border-bottom: 2px solid #01875f; padding-bottom: 10px; }
         h2 { color: #01875f; margin-top: 30px; font-size: 1.3em; }
-        .icon { text-align: center; margin-bottom: 20px; }
+        .icon { text-align: center; margin-bottom: 20px; margin-top: 15px; /* Evita que choque con el botón */ }
         p, li { color: #5f6368; }
         .highlight { color: #202124; font-weight: bold; }
         footer { text-align: center; margin-top: 30px; font-size: 0.9em; color: #9aa0a6; }
+        
+        /* Selector de idiomas con el estilo verde de la página */
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 14px;
+        }
+        .language-switcher a {
+            color: #01875f;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 1px solid #01875f;
+            border-radius: 5px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .language-switcher a:hover {
+            background-color: #01875f;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Selector de idioma que redirige a la versión en Español -->
+        <div class="language-switcher">
+            <a href="/condiciones.html">🌐 Español</a>
+        </div>
+
         <div class="icon">
             <img src="https://cristianredondoruz.github.io/todo_listas_icono.png" 
                  alt="TodoListas icon" 
@@ -55,7 +83,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 TodoListas App | <a href="https://todolistasapp.com/en/index.html" style="color: #9aa0a6;">Back to home</a></p>
+        <p>&copy; 2026 TodoListas App | <a href="/en/index.html" style="color: #9aa0a6; text-decoration: none;">Back to home</a></p>
     </footer>
 </body>
 </html>
