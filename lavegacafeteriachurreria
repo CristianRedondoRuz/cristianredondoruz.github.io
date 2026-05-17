@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churrería Cafetería Tradicional</title>
+    <style>
+        /* --- PALETA DE COLORES CHOCOLATE & CREMA --- */
+        :root {
+            --choc-dark: #2b1810;   /* Chocolate oscuro profundo */
+            --choc-medium: #4a2c1b; /* Chocolate con leche */
+            --cream-light: #fdfaf4; /* Crema suave para fondos */
+            --cream-dark: #f3ebd9;  /* Crema tostado para el libro */
+            --gold: #d99b26;        /* Dorado/Miel para detalles y botones */
+            --text-dark: #3e2723;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Georgia, serif;
+            background-color: var(--cream-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(rgba(43, 24, 16, 0.4), rgba(43, 24, 16, 0.4)), 
+                        url('https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg?auto=compress&cs=tinysrgb&w=1200');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-family: 'Georgia', serif;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        /* --- CARRUSEL DE FOTOS (Automático y Suave) --- */
+        .carousel-container {
+            max-width: 800px;
+            margin: 40px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(43, 24, 16, 0.2);
+            height: 400px;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 300%; /* 3 imágenes = 300% */
+            height: 100%;
+            animation: slide 12s infinite ease-in-out;
+        }
+
+        .carousel-slide {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Imágenes fijas de Pexels que cargan siempre */
+        .slide-1 { background-image: url('https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=800'); }
+        .slide-2 { background-image: url('https://images.pexels.com/photos/5255955/pexels-photo-5255955.jpeg?_gl=1*d09gka*_ga*MTgxNTQ5MjgzNS4xNzc5MDM2NjI5*_ga_8JE65Q40S6*czE3NzkwMzY2MjkkbzEkZzEkdDE3NzkwMzY3NDMkajYkbDAkaDA'); }
+        .slide-3 { background-image: url('https://images.pexels.com/photos/20645731/pexels-photo-20645731.jpeg?_gl=1*kvhoey*_ga*MTgxNTQ5MjgzNS4xNzc5MDM2NjI5*_ga_8JE65Q40S6*czE3NzkwMzY2MjkkbzEkZzEkdDE3NzkwMzY5MDkkajU5JGwwJGgw'); }
+        @keyframes slide {
+            0%, 28% { transform: translateX(0); }
+            33%, 61% { transform: translateX(-33.33%); }
+            66%, 95% { transform: translateX(-66.66%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* --- SECCIÓN DEL MENÚ INTERACTIVO --- */
+        .menu-section {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #f7f0e1;
+        }
+
+        /* Botón para activar el libro */
+        .btn-open-menu {
+            background-color: var(--choc-dark);
+            color: var(--cream-light);
+            border: 2px solid var(--gold);
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+        }
+
+        .btn-open-menu:hover {
+            background-color: var(--gold);
+            color: var(--choc-dark);
+            transform: scale(1.05);
+        }
+
+        /* --- EFECTO LIBRO 3D --- */
+        .book-wrapper {
+            perspective: 1500px; /* Necesario para el efecto 3D */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 0;
+            height: 0; /* Escondido al principio */
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-in-out;
+        }
+
+        /* Cuando se pulsa el botón se activa esta clase */
+        .book-wrapper.open {
+            height: 500px;
+            opacity: 1;
+            margin-top: 20px;
+        }
+
+        .book {
+            position: relative;
+            width: 340px;
+            height: 460px;
+            transform-style: preserve-3d;
+            transition: transform 1s ease;
+        }
+
+        /* Al abrirse, el libro entero se desplaza un poco a la derecha */
+        .book-wrapper.open .book {
+            transform: rotateY(0deg) translateX(170px);
+        }
+
+        .page {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transform-origin: left center;
+            transition: transform 1s ease;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Portada del Libro */
+        .cover {
+            background-color: var(--choc-dark);
+            color: var(--cream-light);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            border: 8px double var(--gold);
+            border-radius: 0 10px 10px 0;
+            z-index: 2;
+            backface-visibility: hidden;
+        }
+
+        .cover h2 {
+            font-family: 'Georgia', serif;
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Al abrirse el libro, la portada gira 180 grados hacia la izquierda */
+        .book-wrapper.open .cover {
+            transform: rotateY(-180deg);
+        }
+
+        /* Interior del Libro (La lista de precios) */
+        .content-page {
+            background-color: var(--cream-dark);
+            padding: 35px 25px;
+            border-left: 2px solid rgba(0,0,0,0.1);
+            border-radius: 0 10px 10px 0;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .content-page h3 {
+            font-family: 'Georgia', serif;
+            border-bottom: 2px solid var(--choc-medium);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            color: var(--choc-dark);
+        }
+
+        /* Estilo de las filas de precios */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .menu-item span:first-child {
+            position: relative;
+            overflow: hidden;
+            flex-grow: 1;
+        }
+
+        /* Los puntitos intermedios entre el producto y el precio */
+        .menu-item span:first-child::after {
+            content: " .........................................................................";
+            color: #b5a992;
+        }
+
+        .price {
+            color: var(--choc-medium);
+            padding-left: 10px;
+        }
+
+        /* --- INFO PANEL (Dirección, Horarios) --- */
+        .info-section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .info-block h4 {
+            color: var(--gold);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* 📱 RESPONSIVO MÓVIL */
+        @media (max-width: 768px) {
+            .carousel-container { height: 250px; }
+            .book-wrapper.open { height: 480px; }
+            .book-wrapper.open .book { transform: rotateY(0deg) translateX(0px); width: 90%; }
+            .book-wrapper.open .cover { display: none; } /* En móvil ocultamos la portada al abrir para que se lea directo */
+            .info-section { flex-direction: column; text-align: center; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PORTADA -->
+    <header class="hero">
+        <h1>La Vega</h1>
+        <h2>Cafetería & Churrería</h2>
+        <p>El sabor de los churros de siempre, hechos con amor cada mañana</p>
+    </header>
+
+    <!-- CARRUSEL AUTOMÁTICO -->
+    <section class="carousel-container">
+        <div class="carousel-track">
+            <div class="carousel-slide slide-1"></div>
+            <div class="carousel-slide slide-2"></div>
+            <div class="carousel-slide slide-3"></div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CARTA / LIBRO -->
+    <section class="menu-section">
+        <button class="btn-open-menu" onclick="toggleMenu()">📖 Ver Nuestra Carta con Precios</button>
+        
+        <div class="book-wrapper" id="bookWrapper">
+            <div class="book">
+                <!-- Portada (Gira al abrir) -->
+                <div class="page cover">
+                    <h2>Nuestra Carta</h2>
+                    <p>~ Recetas Artesanas ~</p>
+                </div>
+                <!-- Interior (Se queda fijo detrás) -->
+                <div class="page content-page">
+                    <h3>Churros y Chocolates</h3>
+                    
+                    <div class="menu-item">
+                        <span>Ración de Churros (4 uds)</span>
+                        <span class="price">2,50€</span>
+                    </div>
+                    <div class="menu-item">
+                        <span>Porra Artesana (u.)</span>
+                        <span class="price">0,80€</span>
+                    </div>
+                    <div class="menu-item">
+                        <span>Chocolate a la Taza</span>
+                        <span class="price">2,20€</span>
+                    </div>
+                    <div class="menu-item">
+                        <span>Café Espresso / Cortado</span>
+                        <span class="price">1,40€</span>
+                    </div>
+                    <div class="menu-item">
+                        <span>Capuccino Especial</span>
+                        <span class="price">2,50€</span>
+                    </div>
+                    <div class="menu-item">
+                        <span>Zumo de Naranja Natural</span>
+                        <span class="price">2,80€</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PANEL DE DIRECCIÓN / HORARIO -->
+    <section class="info-section">
+        <div class="info-block">
+            <h4>📍 Dónde Estamos</h4>
+            <p>Calle Principal Nº 12, Almoradi</p>
+        </div>
+        <div class="info-block">
+            <h4>⏰ Horario</h4>
+            <p>Todos los días: 6:30 - 12:30</p>
+        </div>
+        <div class="info-block">
+            <h4>📞 Teléfono / Encargos</h4>
+            <p>600 00 00 00</p>
+        </div>
+    </section>
+
+    <!-- SCRIPT PARA EL EFECTO DE ABRIR LIBRO -->
+    <script>
+        function toggleMenu() {
+            const wrapper = document.getElementById('bookWrapper');
+            const button = document.querySelector('.btn-open-menu');
+            
+            wrapper.classList.toggle('open');
+            
+            if(wrapper.classList.contains('open')) {
+                button.innerText = "❌ Cerrar Carta";
+            } else {
+                button.innerText = "📖 Ver Nuestra Carta con Precios";
+            }
+        }
+    </script>
+
+</body>
+</html>
