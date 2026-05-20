@@ -11,32 +11,35 @@
   <title>TodoListas | Listas de tareas, compras y alarmas para Android</title>
   <meta name="description" content="TodoListas es una app Android para organizar listas de tareas, compras, notas y recordatorios de forma sencilla y rápida." />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="TodoListas - App de listas y recordatorios" />
   <meta property="og:description" content="Organiza tareas, compras y alarmas fácilmente con TodoListas." />
   <meta property="og:image" content="https://todolistasapp.com/todo_listas_icono.png" />
   <meta property="og:url" content="https://todolistasapp.com/" />
   <meta property="og:type" content="website" />
 
-  <! Schema.org -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MobileApplication",
-  "name": "TodoListas",
-  "operatingSystem": "Android",
-  "applicationCategory": "ProductivityApplication",
-  "url": "https://todolistasapp.com",
-  "downloadUrl": "https://play.google.com/store/apps/details?id=es.todolistas",
-  "image": "https://todolistasapp.com/todo_listas_icono.png",
-  "description": "TodoListas es una app Android para organizar listas de tareas, compras, notas y recordatorios fácilmente.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "EUR"
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "TodoListas",
+    "operatingSystem": "Android",
+    "applicationCategory": "ProductivityApplication",
+    "url": "https://todolistasapp.com",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=es.todolistas",
+    "image": "https://todolistasapp.com/todo_listas_icono.png",
+    "description": "TodoListas es una app Android para organizar listas de tareas, compras, notas y recordatorios fácilmente.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "120"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
   }
-}
-</script>
+  </script>
   
   <link rel="icon" type="image/png" sizes="512x512" href="todo_listas.png">
   <link rel="shortcut icon" href="todo_listas_favicon.ico" type="image/x-icon">
@@ -58,10 +61,9 @@
       background-color: #fff;
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      position: relative; /* Necesario para posicionar el selector de idioma */
+      position: relative;
     }
 
-    /* NUEVO: Estilo para el selector de idiomas */
     .language-switcher {
       position: absolute;
       top: 20px;
@@ -89,7 +91,7 @@
       height: 120px;
       object-fit: contain;
       margin-bottom: 15px;
-      margin-top: 15px; /* Un poco de margen por el botón de idioma */
+      margin-top: 15px;
     }
 
     h1 {
@@ -107,7 +109,7 @@
     .playstore-button {
       display: inline-block;
       padding: 15px 30px;
-      background-color: #01875f; /* Color oficial Google Play */
+      background-color: #01875f;
       color: white;
       text-decoration: none;
       font-weight: bold;
@@ -158,34 +160,33 @@
 </head>
 <body>
   <div class="container">
-    <!-- NUEVO: Selector de idioma -->
     <div class="language-switcher">
-      <a href="/en/index.html">🌐 English</a>
+      <a href="/en/">🌐 English</a>
     </div>
 
-    <img src="https://todolistasapp.com/todo_listas_icono.png" alt="TodoListas app de listas y tareas para Android" class="icon-app">
+    <img src="https://todolistasapp.com/todo_listas_icono.png" alt="Icono oficial de TodoListas, aplicación de productividad para Android" class="icon-app">
     <h1>TodoListas - App de listas y recordatorios</h1>
     <p class="tagline">La forma más sencilla de organizar tus listas y alarmas.</p>
     
-    <a class="playstore-button" href="https://play.google.com/store/apps/details?id=es.todolistas" target="_blank">
-      🚀 Descargar en Google Play
+    <a class="playstore-button" href="https://play.google.com/store/apps/details?id=es.todolistas" target="_blank" rel="noopener noreferrer">
+      🚀 Descargar TodoListas en Google Play
     </a>
 
     <div class="features">
       <div class="feature-item">
-        <span class="feature-icon">📝</span>
+        <span class="feature-icon" aria-hidden="true">📝</span>
         <div><strong>Gestión inteligente:</strong> Crea listas de tareas, compras o notas rápidas con un toque.</div>
       </div>
       <div class="feature-item">
-        <span class="feature-icon">⏰</span>
+        <span class="feature-icon" aria-hidden="true">⏰</span>
         <div><strong>Alarmas y Recordatorios:</strong> No vuelvas a olvidar una tarea importante.</div>
       </div>
       <div class="feature-item">
-        <span class="feature-icon">☁️</span>
+        <span class="feature-icon" aria-hidden="true">☁️</span>
         <div><strong>Copia en la Nube:</strong> Sincroniza tus listas con Google Drive de forma segura (Función VIP).</div>
       </div>
       <div class="feature-item">
-        <span class="feature-icon">🎨</span>
+        <span class="feature-icon" aria-hidden="true">🎨</span>
         <div><strong>Personalización:</strong> Adapta la app a tu estilo con temas y colores.</div>
       </div>
     </div>
