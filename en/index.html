@@ -11,32 +11,38 @@
   <title>TodoListas | To-do lists, shopping lists and reminders for Android</title>
   <meta name="description" content="TodoListas is an Android app to organise to-do lists, shopping lists, notes and reminders quickly and easily." />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="TodoListas - To-do lists and reminders app" />
   <meta property="og:description" content="Organise tasks, shopping lists and reminders easily with TodoListas." />
   <meta property="og:image" content="https://todolistasapp.com/todo_listas_icono.png" />
   <meta property="og:url" content="https://todolistasapp.com/en/" />
   <meta property="og:type" content="website" />
 
-  <!-- Schema.org -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MobileApplication",
-  "name": "TodoListas",
-  "operatingSystem": "Android",
-  "applicationCategory": "ProductivityApplication",
-  "url": "https://todolistasapp.com/en/",
-  "downloadUrl": "https://play.google.com/store/apps/details?id=es.todolistas",
-  "image": "https://todolistasapp.com/todo_listas_icono.png",
-  "description": "TodoListas is an Android app to organise to-do lists, shopping lists, notes and reminders easily.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "EUR"
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "TodoListas",
+    "operatingSystem": "Android",
+    "applicationCategory": "ProductivityApplication",
+    "url": "https://todolistasapp.com/en/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=es.todolistas",
+    "image": "https://todolistasapp.com/todo_listas_icono.png",
+    "description": "TodoListas is an Android app to organise to-do lists, shopping lists, notes and reminders easily.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "120"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
   }
-}
-</script>
+  </script>
+  
+  <link rel="icon" type="image/png" sizes="512x512" href="../todo_listas.png">
+  <link rel="shortcut icon" href="../todo_listas_favicon.ico" type="image/x-icon">
   
   <style>
     body {
@@ -55,10 +61,9 @@
       background-color: #fff;
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      position: relative; /* Necesario para posicionar el selector de idioma */
+      position: relative;
     }
 
-    /* Selector de idiomas con la misma estética que el español */
     .language-switcher {
       position: absolute;
       top: 20px;
@@ -86,7 +91,7 @@
       height: 120px;
       object-fit: contain;
       margin-bottom: 15px;
-      margin-top: 15px; /* Espacio para que no choque con el botón */
+      margin-top: 15px;
     }
 
     h1 {
@@ -104,7 +109,7 @@
     .playstore-button {
       display: inline-block;
       padding: 15px 30px;
-      background-color: #01875f; /* Color oficial Google Play */
+      background-color: #01875f;
       color: white;
       text-decoration: none;
       font-weight: bold;
@@ -155,41 +160,39 @@
 </head>
 <body>
   <div class="container">
-    <!-- NUEVO: Selector de idioma que apunta al Español de la raíz -->
     <div class="language-switcher">
-      <a href="/index.html">🌐 Español</a>
+      <a href="/">🌐 Español</a>
     </div>
 
-    <img src="https://todolistasapp.com/todo_listas_icono.png" alt="TodoListas Android to-do list and reminders app" class="icon-app">
+    <img src="https://todolistasapp.com/todo_listas_icono.png" alt="TodoListas official icon, Android productivity mobile application" class="icon-app">
     <h1>TodoListas - To-do lists and reminders app</h1>
     <p class="tagline">The easiest way to organise your lists and alarms.</p>
     
-    <a class="playstore-button" href="https://play.google.com/store/apps/details?id=es.todolistas" target="_blank">
-      🚀 Download on Google Play
+    <a class="playstore-button" href="https://play.google.com/store/apps/details?id=es.todolistas" target="_blank" rel="noopener noreferrer">
+      🚀 Download TodoListas on Google Play
     </a>
 
     <div class="features">
       <div class="feature-item">
-        <span class="feature-icon">📝</span>
+        <span class="feature-icon" aria-hidden="true">📝</span>
         <div><strong>Smart organisation:</strong> Create task lists, shopping lists or quick notes with a single tap.</div>
       </div>
       <div class="feature-item">
-        <span class="feature-icon">⏰</span>
+        <span class="feature-icon" aria-hidden="true">⏰</span>
         <div><strong>Alarms and Reminders:</strong> Never forget an important task again.</div>
       </div>
       <div class="feature-item">
-        <span class="feature-icon">☁️</span>
+        <span class="feature-icon" aria-hidden="true">☁️</span>
         <div><strong>Cloud Backup:</strong> Securely sync your lists with Google Drive (VIP Feature).</div>
       </div>
       <div class="feature-item">
-        <span class="feature-icon">🎨</span>
+        <span class="feature-icon" aria-hidden="true">🎨</span>
         <div><strong>Customisation:</strong> Adapt the app to your style with themes and colours.</div>
       </div>
     </div>
 
     <footer>
       <p>&copy; 2026 TodoListas App</p>
-      <!-- Corregido el enlace para que apunte a la privacidad en inglés -->
       <a href="/en/politica-privacidad.html">Privacy Policy</a> | 
       <a href="mailto:todolistas.app@gmail.com">Contact</a>
     </footer>
