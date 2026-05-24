@@ -1,0 +1,22 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "es.todolistas",
+      "sha256_cert_fingerprints": [
+        "97:9C:2B:14:5F:F8:EF:DB:78:C2:13:40:7E:59:1A:E6:69:D7:3D:A8:F6:A3:70:67:55:71:C9:B0:95:DD:77:F8"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "es.todolistas",
+      "sha256_cert_fingerprints": [
+        "DE:CE:A5:23:A7:FB:18:1F:24:36:E7:48:09:20:D2:12:DE:B4:FF:B9:03:03:91:B4:3F:1E:69:6E:64:F7:D4:9C"
+      ]
+    }
+  }
+]
