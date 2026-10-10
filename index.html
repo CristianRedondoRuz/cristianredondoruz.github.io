@@ -230,7 +230,120 @@
       }
     }
 
+/* Carrusel de reseñas de Google Play */
+.reviews-section {
+  margin-top: 40px;
+  padding: 28px 20px;
+  border-top: 1px solid #eee;
+  background: #f8faf9;
+  border-radius: 14px;
+}
+
+.reviews-section h2 {
+  color: #202124;
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+
+.reviews-intro {
+  color: #5f6368;
+  font-size: 14px;
+  margin: 0 0 22px;
+}
+
+.review-card {
+  display: none;
+  text-align: left;
+  background: #fff;
+  border: 1px solid #e8ece9;
+  border-radius: 12px;
+  padding: 22px;
+  min-height: 175px;
+  box-sizing: border-box;
+}
+
+.review-card.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.review-text {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 20px;
+}
+
+.review-author {
+  color: #202124;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.review-date {
+  color: #777;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.reviews-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 18px;
+}
+
+.review-arrow {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #01875f;
+  border-radius: 50%;
+  background: #fff;
+  color: #01875f;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.review-arrow:hover {
+  background: #01875f;
+  color: #fff;
+}
+
+.review-counter {
+  color: #5f6368;
+  font-size: 14px;
+  min-width: 45px;
+}
+
+.reviews-play-link {
+  display: inline-block;
+  margin-top: 22px;
+  color: #01875f;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.reviews-play-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .reviews-section {
+    padding: 22px 14px;
+  }
+
+  .review-card {
+    padding: 18px;
+  }
+
+  .review-text {
+    font-size: 15px;
+  }
+}
   </style>
+  
 </head>
 <body>
   <div class="container">
@@ -268,7 +381,91 @@
         <div><strong>Personalización:</strong> Adapta la app a tu estilo con temas y colores.</div>
       </div>
     </div>
+
     
+<section class="reviews-section" aria-labelledby="reviews-title">
+  <h2 id="reviews-title">Lo que opinan nuestros usuarios</h2>
+  <p class="reviews-intro">
+    Opiniones reales publicadas en Google Play.
+  </p>
+
+  <div id="reviews-carousel" aria-live="polite">
+    <article class="review-card active">
+      <p class="review-text">
+        «es una aplicación increíble que me a ayudado mucho para
+        organizarme para el cole y tiene de todo todo todo; alarmas,
+        listas, para los posits... vamos que viene muy bien para organizarse.»
+      </p>
+      <div>
+        <div class="review-author">Sara Rodriguez del Fresno</div>
+        <div class="review-date">7 de septiembre de 2026</div>
+      </div>
+    </article>
+
+    <article class="review-card">
+      <p class="review-text">
+        «Me parece aplicación sencilla pero muy útil para organizarse.
+        La recomiendo 100%!!»
+      </p>
+      <div>
+        <div class="review-author">Juan Carlos Trives</div>
+        <div class="review-date">18 de agosto de 2026</div>
+      </div>
+    </article>
+
+    <article class="review-card">
+      <p class="review-text">
+        «No soy muy de móviles, pero está aplicación me ha venido muy
+        bien. La uso para apuntarme cosas que no quiero olvidar. Es
+        sencilla y no tiene cosas raras, se entiende rápido. Desde que
+        la tengo estoy más tranquilo porque se que el móvil me avisa.
+        Muy recomendable para gente como yo»
+      </p>
+      <div>
+        <div class="review-author">Juan Jover</div>
+        <div class="review-date">31 de enero de 2026</div>
+      </div>
+    </article>
+
+    <article class="review-card">
+      <p class="review-text">
+        «App muy útil para organizarme el día a día. Hago mi lista de
+        tareas y las alarmas me recuerdan todo incluso con la pantalla
+        bloqueada. Sencilla y muy práctica.»
+      </p>
+      <div>
+        <div class="review-author">Isabel Riesgo</div>
+        <div class="review-date">12 de octubre de 2025</div>
+      </div>
+    </article>
+
+    <article class="review-card">
+      <p class="review-text">
+        «La uso para organizar mis proyectos del trabajo. Poder tener
+        listas separadas y recordatorios me facilita mucho las cosas.»
+      </p>
+      <div>
+        <div class="review-author">Celia Morales Ferrer</div>
+        <div class="review-date">10 de octubre de 2025</div>
+      </div>
+    </article>
+  </div>
+
+  <div class="reviews-controls">
+    <button class="review-arrow" id="review-prev"
+      type="button" aria-label="Reseña anterior">‹</button>
+    <span class="review-counter" id="review-counter">1 de 5</span>
+    <button class="review-arrow" id="review-next"
+      type="button" aria-label="Reseña siguiente">›</button>
+  </div>
+
+  <a class="reviews-play-link"
+    href="https://play.google.com/store/apps/details?id=es.todolistas"
+    target="_blank" rel="noopener noreferrer">
+    Leer reseñas en Google Play →
+  </a>
+</section>
+
     <section class="other-app" aria-labelledby="fuelprice-title">
       <h2>Descubre nuestras otras aplicaciones</h2>
 
@@ -303,5 +500,42 @@
       <a href="mailto:todolistas.app@gmail.com">Contacto</a>
     </footer>
   </div>
+
+
+<script>
+  (() => {
+    const carousel = document.getElementById('reviews-carousel');
+    const counter = document.getElementById('review-counter');
+    const previous = document.getElementById('review-prev');
+    const next = document.getElementById('review-next');
+
+    if (!carousel || !counter || !previous || !next) return;
+
+    const reviews = Array.from(
+      carousel.querySelectorAll('.review-card')
+    );
+
+    let current = 0;
+
+    function showReview(index) {
+      current = (index + reviews.length) % reviews.length;
+
+      reviews.forEach((review, i) => {
+        review.classList.toggle('active', i === current);
+      });
+
+      counter.textContent = `${current + 1} de ${reviews.length}`;
+    }
+
+    previous.addEventListener('click', () => {
+      showReview(current - 1);
+    });
+
+    next.addEventListener('click', () => {
+      showReview(current + 1);
+    });
+  })();
+</script>
+  
 </body>
 </html>
